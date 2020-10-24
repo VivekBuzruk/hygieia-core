@@ -106,24 +106,28 @@ public class SyncDashboard {
 
         for(Dashboard dashboard : existingDashboards) {
             if (CollectionUtils.isEmpty(dashboard.getApplication().getComponents())) continue;
-            ObjectId componentId = dashboard.getApplication().getComponents().get(0).getId();
-            if (componentId == null) continue;
-            StandardWidget standardWidget = new StandardWidget(collectorType, componentId);
-            Component component = componentRepository.findOne(componentId);
-            if (component == null) continue;
+            for (Component myComponent : dashboard.getApplication().getComponents()) { // List<Component> )
 
-            // if the additional association logic does not comply do not associate
-            if(!associateByType(collectorType, component, collectorItem, featureFlag)) continue;
+                ObjectId componentId = myComponent.getId(); // dashboard.getApplication().getComponents().get(0).getId();
+                if (componentId == null) continue;
+                StandardWidget standardWidget = new StandardWidget(collectorType, componentId);
+                Component component = componentRepository.findOne(componentId);
+                if (component == null) continue;
 
-            component.addCollectorItem(collectorType, collectorItem);
-            componentRepository.save(component);
-            collectorItem.setEnabled(true);
-            collectorItemRepository.save(collectorItem);
+                // if the additional association logic does not comply do not associate
+                if(!associateByType(collectorType, component, collectorItem, featureFlag)) continue;
 
-            if (addWidget && (getWidget(standardWidget.getName(), dashboard) == null)) {
-                Widget widget = standardWidget.getWidget();
-                dashboard.getWidgets().add(widget);
-                dashboardRepository.save(dashboard);
+                component.addCollectorItem(collectorType, collectorItem);
+                componentRepository.save(component);
+                collectorItem.setEnabled(true);
+                collectorItemRepository.save(collectorItem);
+
+                if (addWidget && (getWidget(standardWidget.getName(), dashboard) == null)) {
+                    Widget widget = standardWidget.getWidget();
+                    dashboard.getWidgets().add(widget);
+                    dashboardRepository.save(dashboard);
+                }
+                
             }
         }
     }

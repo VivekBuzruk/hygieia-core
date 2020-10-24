@@ -12,6 +12,7 @@ import java.util.Map;
 public class Widget {
     private ObjectId id;
     private String name;
+    private String relId;
     private ObjectId componentId;
     private Map<String,Object> options = new HashMap<>();
 
@@ -29,6 +30,14 @@ public class Widget {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getRelId() {
+        return relId;
+    }
+
+    public void setRelId(String relId) {
+        this.relId = relId;
     }
 
     public ObjectId getComponentId() {

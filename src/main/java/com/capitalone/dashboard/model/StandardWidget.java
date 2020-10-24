@@ -22,10 +22,19 @@ public class StandardWidget {
 
     private Map<String, Object> options = new HashMap<>();
     private String name;
+    private String relId;
     private ObjectId componentId;
 
     public StandardWidget(CollectorType collectorType, ObjectId componentId) {
         this.collectorType = collectorType;
+        this.relId = "0";
+        this.componentId = componentId;
+        setNameAndId();
+    }
+
+    public StandardWidget(CollectorType collectorType, ObjectId componentId, String relId) {
+        this.collectorType = collectorType;
+        this.relId = relId;
         this.componentId = componentId;
         setNameAndId();
     }
@@ -84,6 +93,7 @@ public class StandardWidget {
         Widget widget = new Widget();
         widget.setId(ObjectId.get());
         widget.setName(name);
+        widget.setRelId(relId);
         widget.setComponentId(componentId);
         if ((options != null) && !options.isEmpty()) {
             widget.getOptions().putAll(options);

@@ -19,7 +19,7 @@
     <groupId>com.capitalone.dashboard</groupId>
     <artifactId>core</artifactId>
     <packaging>jar</packaging>
-    <version>3.10.8</version>
+    <version>3.10.6</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Core package shared by API layer and Microservices</description>
     <url>https://github.com/Hygieia/hygieia-core</url>
@@ -97,7 +97,6 @@
         <site>
             <id>hygieia.core.website</id>
             <name>Capital One Maven Plugins Site</name>
-            <!--suppress UnresolvedMavenProperty -->
             <url>scm:git:https://${github.username}@github.com/Hygieia/hygieia-core</url>
         </site>
     </distributionManagement>
@@ -181,7 +180,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>5.2.9.RELEASE</version>
+            <version>5.2.5.RELEASE</version>
         </dependency>
 
         <!-- Misc Deps -->
@@ -289,6 +288,21 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
         </dependency>
+
+	<!-- API, java.xml.bind module -->
+	<dependency>
+	    <groupId>jakarta.xml.bind</groupId>
+	    <artifactId>jakarta.xml.bind-api</artifactId>
+	    <version>2.3.2</version>
+	</dependency>
+
+	<!-- Runtime, com.sun.xml.bind module -->
+	<dependency>
+	    <groupId>org.glassfish.jaxb</groupId>
+	    <artifactId>jaxb-runtime</artifactId>
+	    <version>2.3.2</version>
+	</dependency>
+
     </dependencies>
 
     <build>

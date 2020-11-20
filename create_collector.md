@@ -233,7 +233,7 @@ for information about sourcing this properties file.
 
 
 =======================
-Here are some places to start looking:
+In addition here are some places to start looking:
 
     Collectors
         [#985](https://github.com/Hygieia/Hygieia/issues/985) Creating Custom collectors (Skeleton project)

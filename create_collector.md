@@ -232,4 +232,20 @@ for information about sourcing this properties file.
     apiToken=HJBKJHG76JHG%^$^jhJH
 
 
+=======================
+Here are some places to start looking:
+
+    Collectors
+        [#985](https://github.com/Hygieia/Hygieia/issues/985) Creating Custom collectors (Skeleton project)
+        [#747](https://github.com/Hygieia/Hygieia/issues/747)Document request
+        [#733](https://github.com/Hygieia/Hygieia/issues/733) How to build a custom collector
+        [#726](https://github.com/Hygieia/Hygieia/issues/726) How to add Rally collector
+        [#713](https://github.com/Hygieia/Hygieia/issues/713) What appetite is there to have non java collectors?
+    Widgets
+        [#837](https://github.com/Hygieia/Hygieia/issues/837) How to create custom widget
+        [#291](https://github.com/Hygieia/Hygieia/issues/291) Urgent any help would be appreciated - there will be any manual like creating a collector but for creating a UI with a widgetUI
+        [#283](https://github.com/Hygieia/Hygieia/issues/283) Need help widgets
+    General
+        [#221](https://github.com/Hygieia/Hygieia/issues/221) Need a Step-by-step guide
+        [#67](https://github.com/Hygieia/Hygieia/issues/67) Getting started guide
 
